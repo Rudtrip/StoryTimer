@@ -2,16 +2,16 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime
-from enum import StrEnum
+from enum import Enum
 from pathlib import Path
 
 
-class MediaType(StrEnum):
+class MediaType(str, Enum):
     PHOTO = "photo"
     VIDEO = "video"
 
 
-class PostStatus(StrEnum):
+class PostStatus(str, Enum):
     SCHEDULED = "scheduled"
     PUBLISHING = "publishing"
     PUBLISHED = "published"
@@ -19,7 +19,7 @@ class PostStatus(StrEnum):
     CANCELLED = "cancelled"
 
 
-class SessionStep(StrEnum):
+class SessionStep(str, Enum):
     WAITING_FOR_MEDIA = "waiting_for_media"
     WAITING_FOR_DATE = "waiting_for_date"
     WAITING_FOR_TIME = "waiting_for_time"
