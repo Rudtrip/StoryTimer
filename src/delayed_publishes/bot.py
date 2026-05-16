@@ -62,7 +62,10 @@ class BotApp:
             self._handle_message(message)
 
     def _handle_callback_query(self, callback_query: dict[str, Any]) -> None:
-        self.api.answer_callback_query(callback_query["id"])
+        try:
+            self.api.answer_callback_query(callback_query["id"])
+        except TelegramApiError:
+            logger.info("Callback query is too old to answer; continuing with update handling")
         message = callback_query.get("message") or {}
         chat_id = message.get("chat", {}).get("id")
         user_id = callback_query.get("from", {}).get("id", chat_id)
