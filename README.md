@@ -11,7 +11,7 @@ The service runs as one Python process:
 
 ## Requirements
 
-- Python 3.11+
+- Python 3.10+
 - Telegram bot token from BotFather
 - Telegram Business connection that grants the bot `can_manage_stories`
 

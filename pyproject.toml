@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "delayed-publishes"
 version = "0.1.0"
 description = "Telegram bot for delayed Telegram Stories publishing"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 dependencies = [
   "python-dotenv==1.0.1",
   "requests==2.32.3",
